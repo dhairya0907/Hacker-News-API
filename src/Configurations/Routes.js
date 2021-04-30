@@ -1,10 +1,14 @@
+import { Route, IndexRoute } from "react-router";
+import App from '../App'
 import Home from '../Screens/Home';
-import { Router, Route } from "react-router";
+import Test from '../Screens/Test';
 
 const routes = (
-    <Route path="/" component={Home}>
-        
+    <Route path="/" component={App}>
+         <IndexRoute component={Home}/>
+         <Route path="Test" component={Test}/>
     </Route>
+   
 );
 
 export default routes;

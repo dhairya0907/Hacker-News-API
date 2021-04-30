@@ -1,25 +1,12 @@
-import logo from '../assets/logo.svg';
-import '../CSS/Home.css';
+import React, { Component } from "react";
+import { browserHistory } from 'react-router';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hey
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends Component {
+  onClick() {
+    browserHistory.push("/Test");
+  }
+  render() {
+    return <button onClick={this.onClick.bind(this)}>Add New user</button>;
+  }
 }
-
-export default App;
