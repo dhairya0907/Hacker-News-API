@@ -40,6 +40,7 @@ export default class App extends Component {
           >
             <text class="Top-buttons-text">Past</text>
           </div>
+          <div class="Load-box"><text  class="Load-text">Load More</text></div>
         </header>
       </div>
     );

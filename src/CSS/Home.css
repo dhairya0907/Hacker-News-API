@@ -99,4 +99,34 @@
     margin: 0px 10px;
   }
 
+  .Load-box {
+    position: absolute;
+    width: 328px;
+    height: 48px;
+    left: 25%;
+    bottom: 20px;
+    position: absolute;
+   
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: #FFC700;
+    border-radius: 12px;
+  }
+
+  .Load-text {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-family: OpenSansBold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+  }
+
   
