@@ -4983,6 +4983,14 @@ flat-cache@^3.0.4:
     flatted "^3.1.0"
     rimraf "^3.0.2"
 
+flatlist-react@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/flatlist-react/-/flatlist-react-1.5.0.tgz#96985790a3cf3dd534050bb05c0ed2a1ad39a87a"
+  integrity sha512-Ux0Pnp679sNcq+v0o+mU5pJgPBFdaOWDzxGknftZw1G4uBrwyAFRJN++gyveiEXc5bPvRL0wsE2B6OYSmdUmKg==
+  dependencies:
+    prop-types "^15.7.2"
+    warning "^4.0.3"
+
 flatted@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.1.1.tgz#c4b489e80096d9df1dfc97c79871aea7c617c469"
@@ -10945,6 +10953,13 @@ warning@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
   integrity sha1-MuU3fLVy3kqwR1O9+IIcAe1gW3w=
+  dependencies:
+    loose-envify "^1.0.0"
+
+warning@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
+  integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
   dependencies:
     loose-envify "^1.0.0"
 
