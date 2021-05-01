@@ -11,7 +11,8 @@ export default class App extends Component {
   state = {
     newSelected: true,
     noData: false,
-    topStoriesIdList : [],
+    topStoriesIdList: [],
+    stories: [],
     people: [
       { title: "Elson", description: "Correia", time: "", comments: 50 },
       { title: "Elson", description: "Correia", time: 2, comments: "" },
@@ -27,20 +28,36 @@ export default class App extends Component {
   }
 
   async componentDidMount() {
-    this.getNewStoriesIdList();
     this.disableScrolling();
+    this.getTopStoriesIdList();
   }
 
-  async getNewStoriesIdList() {
+  async getTopStoriesIdList() {
     fetch(api.baseUrl + "topstories.json")
       .then((response) => response.json())
       .then((data) => {
-          this.setState({topStoriesIdList : data})
-          console.log(this.state.topStoriesIdList)
+        this.setState({ topStoriesIdList: data }, () =>
+          this.getTopThreeStories()
+        );
+        console.log(this.state.topStoriesIdList);
       })
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  async getTopThreeStories() {
+    for (var i = 0; i < 3; i++) {
+    await  fetch(api.baseUrl + "item/" + this.state.topStoriesIdList[i] + ".json")
+        .then((response) => response.json())
+        .then((data) => {
+          this.setState({ stories: this.state.stories.concat(data) });
+          console.log(this.state.stories[0].descendants);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }
 
   async getMoreListData() {
@@ -50,6 +67,11 @@ export default class App extends Component {
       { title: "Elson", description: "", time: 2, comments: 50 },
     ];
     this.setState({ people: this.state.people.concat(newData) });
+  }
+
+  getTime(time){
+    var date = new Date(time * 1000);
+    var hours = date.getHours();
   }
 
   renderList = (item, idx) => {
@@ -66,10 +88,10 @@ export default class App extends Component {
           </text>
           <img src={clock} className="List-clock" alt="clock" />
           <text className="List-time">
-            {item.time == "" ? "No time available" : item.time + " min ago"} |{" "}
-            {item.comments == ""
+            {item.time == "" ? "No time available" :this.getTime(item.time) + " min ago"} |{" "}
+            {item.descendants == ""
               ? "No comments available"
-              : item.comments + " comments"}
+              : item.descendants + " comments"}
           </text>
         </div>
       </li>
@@ -118,7 +140,7 @@ export default class App extends Component {
           </div>
           <div class="List-outer-div" style={{ overflowY: "scroll" }}>
             <FlatList
-              list={this.state.people}
+              list={ this.state.stories}
               renderItem={this.renderList}
               renderWhenEmpty={this.renderEmptyList}
             />

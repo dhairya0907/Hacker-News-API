@@ -124,6 +124,10 @@
     font-weight: bold;
     font-size: 15px;
     line-height: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
   
     color: rgba(0, 0, 0, 0.82);
   }
