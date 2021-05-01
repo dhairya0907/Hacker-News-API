@@ -123,7 +123,6 @@
     font-style: normal;
     font-weight: bold;
     font-size: 15px;
-    line-height: 16px;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;  
@@ -139,7 +138,10 @@
     font-family: OpenSansRegular;
     font-weight: normal;
     font-size: 13px;
-    line-height: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
     
     color: rgba(0, 0, 0, 0.82);
   }
@@ -159,7 +161,7 @@
     font-family: OpenSansRegular;
     font-weight: normal;
     font-size: 13px;
-    line-height: 14px;
+  
     
     color: rgba(0, 0, 0, 0.5);
   }
@@ -187,7 +189,6 @@
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
-  line-height: 22px;
   color: #000000;
 }
 
@@ -224,7 +225,6 @@
     font-style: normal;
     font-weight: bold;
     font-size: 15px;
-    line-height: 16px;
     color: rgba(0, 0, 0, 0.82);
 
 }

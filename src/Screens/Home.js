@@ -40,7 +40,6 @@ export default class App extends Component {
         this.setState({ topStoriesIdList: data }, () =>
           this.getTopThreeStories()
         );
-        console.log(this.state.topStoriesIdList);
       })
       .catch((error) => {
         console.log(error);
@@ -55,12 +54,12 @@ export default class App extends Component {
         .then((response) => response.json())
         .then((data) => {
           this.setState({ stories: this.state.stories.concat(data) });
-          console.log(this.state.stories[0].descendants);
         })
         .catch((error) => {
           console.log(error);
         });
     }
+    this.setState({ noData: false })
   }
 
   async getMoreListData() {
@@ -78,6 +77,10 @@ export default class App extends Component {
     return moment(date).fromNow();
   }
 
+  getDescription(description){
+    return description.replace( /(<([^>]+)>)/ig, '')
+}
+
   renderList = (item, idx) => {
     return (
       <li>
@@ -86,7 +89,7 @@ export default class App extends Component {
             {item.title == "" ? "No title available" : item.title}
           </text>
           <text class="List-description">
-            {item.text == "" ? "No description available" : item.text}
+            {item.text == "" || item.text == null ? "No description available" : this.getDescription(item.text)}
           </text>
           <img src={clock} className="List-clock" alt="clock" />
           <text className="List-time">
