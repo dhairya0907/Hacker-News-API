@@ -115,6 +115,51 @@
   border-radius: 12px;
 }
 
+.List-title {
+  position: absolute;
+  margin-top: 20px;
+  left: 20px;
+    font-family: OpenSansExtraBold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 16px;
+  
+    color: rgba(0, 0, 0, 0.82);
+  }
+
+  .List-description {
+    position: absolute;
+    margin-top: 45px;
+    left: 20px;
+    font-family: OpenSansRegular;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 14px;
+    
+    color: rgba(0, 0, 0, 0.82);
+  }
+
+  .List-clock {
+    position: absolute;
+    height: 20px;
+    pointer-events: none;
+    margin-top: 120px;
+    left: 20px;
+  }
+
+  .List-time {
+    position: absolute;
+    margin-top: 123px;
+    left: 43px;
+    font-family: OpenSansRegular;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 14px;
+    
+    color: rgba(0, 0, 0, 0.5);
+  }
+
 .Load-box {
   position: absolute;
   width: 328px;

@@ -3,6 +3,7 @@ import { browserHistory } from "react-router";
 import FlatList from "flatlist-react";
 
 import "../CSS/Home.css";
+import clock from "../assets/clock.svg";
 
 export default class App extends Component {
   state = {
@@ -36,13 +37,18 @@ export default class App extends Component {
     this.setState({ people: this.state.people.concat(newData) });
   }
 
-  renderPerson = (person, idx) => {
+  renderList = (person, idx) => {
     return (
       <li>
-        <div class="List-box ">
-          <text style={{ color: "black" }}>
-            {person.firstName} {person.lastName}
+        <div class="List-box">
+          <text class="List-title">Lorem Ipsum is simply dummy text.</text>
+          <text class="List-description">
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s, …when an unknown printer took a galley of type and
+            scrambled
           </text>
+          <img src={clock} className="List-clock" alt="clock" />
+          <text className="List-time">1 min ago | 50 comments</text>
         </div>
       </li>
     );
@@ -82,7 +88,7 @@ export default class App extends Component {
           <div class="List-outer-div" style={{ overflowY: "scroll" }}>
             <FlatList
               list={this.state.people}
-              renderItem={this.renderPerson}
+              renderItem={this.renderList}
               renderWhenEmpty={() => <div>List is empty!</div>}
             />
 
