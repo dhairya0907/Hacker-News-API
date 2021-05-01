@@ -228,3 +228,10 @@
     color: rgba(0, 0, 0, 0.82);
 
 }
+
+.Loading-spin  {
+  position: absolute;
+  top:50%;
+  width: 100%;
+
+}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { browserHistory } from "react-router";
 import FlatList from "flatlist-react";
 import moment from "moment";
+import ReactLoading from 'react-loading';
 
 import "../CSS/Home.css";
 import clock from "../assets/clock.svg";
@@ -10,6 +11,7 @@ const api = require("../Configurations/api");
 
 export default class App extends Component {
   state = {
+    isLoading : false,
     newSelected: true,
     noData: false,
     topStoriesIdList: [],
@@ -29,6 +31,7 @@ export default class App extends Component {
   }
 
   async componentDidMount() {
+    this.setState({isLoading : true})
     this.disableScrolling();
     this.getTopStoriesIdList();
   }
@@ -59,7 +62,7 @@ export default class App extends Component {
           console.log(error);
         });
     }
-    this.setState({ noData: false });
+    this.setState({ noData: false, isLoading : false });
   }
 
   async getMoreListData() {
@@ -145,6 +148,7 @@ export default class App extends Component {
           >
             <text class="Top-buttons-text">Past</text>
           </div>
+          {!this.state.isLoading ?
           <div class="List-outer-div" style={{ overflowY: "scroll" }}>
             <FlatList
               list={this.state.stories}
@@ -169,7 +173,8 @@ export default class App extends Component {
             <br></br>
             <br></br>
             <br></br>
-          </div>
+          </div> :
+          <ReactLoading type={"spin"} color={"black"} height={100} width={50} class="Loading-spin"/>}
           <div class="Bottom-title"></div>
           <text class="Bottom-title-text">HACKERNEWS.</text>
         </header>
