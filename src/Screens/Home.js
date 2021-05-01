@@ -13,7 +13,6 @@ const people = [
   { firstName: "John", lastName: "Doe", info: { age: 18 } },
   { firstName: "Elson", lastName: "Correia", info: { age: 24 } },
   { firstName: "John", lastName: "Doe", info: { age: 18 } },
- 
 ];
 
 export default class App extends Component {
@@ -24,7 +23,7 @@ export default class App extends Component {
     var x = window.scrollX;
     var y = window.scrollY;
     window.onscroll = function () {
-      window.scrollTo(x-10, y-10);
+      window.scrollTo(x - 10, y - 10);
     };
   }
 
@@ -46,7 +45,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div class='Main-div'>
+      <div class="Main-div">
         <header class="Home-header">
           <div class="Title-header">
             <div class="Title-style">
@@ -82,13 +81,27 @@ export default class App extends Component {
               renderWhenEmpty={() => <div>List is empty!</div>}
             />
 
-            </div>
-          <button
+            <br></br>
+            <br></br>
+            <button
               class="Load-box"
-              onClick={() => this.setState({ newSelected: !this.state.newSelected })}
+              onClick={() =>
+                this.setState({ newSelected: !this.state.newSelected })
+              }
             >
               <text class="Load-text">Load More</text>
             </button>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+          </div>
         </header>
       </div>
     );
