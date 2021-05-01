@@ -14,6 +14,8 @@ export default class App extends Component {
     isLoading: false,
     isNextLoading: false,
     newSelected: true,
+    pastSelected: false,
+    topSelected: false,
     nextIndex: 0,
     noData: false,
     newStoriesIdList: [],
@@ -38,36 +40,59 @@ export default class App extends Component {
     this.getNewStoriesIdList();
   }
 
-  whichList() {
-    if (!this.state.newSelected) {
+  whichList(listType) {
+    if (listType == "new" && !this.state.newSelected) {
       this.setState(
         {
           newSelected: true,
-          newStoriesIdList: this.state.newStoriesIdList.reverse(),
+          pastSelected: false,
+          topSelected: false,
           isLoading: true,
-          stories : [],
+          stories: [],
         },
-        () => this.getTopThreeStories()
+        () => this.getNewStoriesIdList()
       );
-    } else {
+    } else if (listType == "past" && !this.state.pastSelected) {
       this.setState(
         {
           newSelected: false,
-          newStoriesIdList: this.state.newStoriesIdList.reverse(),
+          pastSelected: true,
+          topSelected: false,
           isLoading: true,
-          stories : [],
+          stories: [],
         },
-        () => this.getTopThreeStories()
+        () => this.getNewStoriesIdList()
+      );
+    } else if (listType == "top" && !this.state.topSelected) {
+      this.setState(
+        {
+          newSelected: false,
+          pastSelected: false,
+          topSelected: true,
+          isLoading: true,
+          stories: [],
+        },
+        () => this.getNewStoriesIdList()
       );
     }
   }
 
   async getNewStoriesIdList() {
-    fetch(api.baseUrl + "newstories.json")
+    fetch(
+      api.baseUrl +
+        (this.state.topSelected ? "topstories.json" : "newstories.json")
+    )
       .then((response) => response.json())
       .then((data) => {
         this.setState({ newStoriesIdList: data }, () =>
-          this.getTopThreeStories()
+          this.setState(
+            {
+              newStoriesIdList: this.state.pastSelected
+                ? this.state.newStoriesIdList.reverse()
+                : this.state.newStoriesIdList,
+            },
+            () => this.getTopThreeStories()
+          )
         );
       })
       .catch((error) => {
@@ -110,19 +135,31 @@ export default class App extends Component {
   renderList = (item, idx) => {
     return (
       <li>
-        <div class="List-box">
+        <div
+          class="List-box"
+          onClick={() =>
+            item.url == ""
+              ? alert("No URL available.")
+              : window.open(item.url, "_blank")
+          }
+        >
           <text class="List-title">
-            {item.title == "" ? "No title available" : item.title}
+            {item.title == "" || item.title == null
+              ? "No title available"
+              : item.title}
           </text>
           <text class="List-description">
             {item.text == "" || item.text == null
-              ? "No description available"
+              ? "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, …when an unknown printer took a galley of type and scrambled"
               : this.getDescription(item.text)}
           </text>
           <img src={clock} className="List-clock" alt="clock" />
           <text className="List-time">
-            {item.time == "" ? "No time available" : this.getTime(item.time)} |{" "}
-            {item.descendants == ""
+            {item.time == "" || item.time == null
+              ? "No time available"
+              : this.getTime(item.time)}{" "}
+            |{" "}
+            {item.descendants == "" || item.descendants == null
               ? "No comments available"
               : item.descendants + " comments"}
           </text>
@@ -164,12 +201,22 @@ export default class App extends Component {
           <div
             class="Top-buttons"
             style={{
-              backgroundColor: !this.state.newSelected ? "#FBC91B" : "#F2F2F2",
+              backgroundColor: this.state.pastSelected ? "#FBC91B" : "#F2F2F2",
               left: 110,
             }}
             onClick={() => this.whichList("past")}
           >
             <text class="Top-buttons-text">Past</text>
+          </div>
+          <div
+            class="Top-buttons"
+            style={{
+              backgroundColor: this.state.topSelected ? "#FBC91B" : "#F2F2F2",
+              left: 200,
+            }}
+            onClick={() => this.whichList("top")}
+          >
+            <text class="Top-buttons-text">Top</text>
           </div>
           {!this.state.isLoading ? (
             <div class="List-outer-div" style={{ overflowY: "scroll" }}>
