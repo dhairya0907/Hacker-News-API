@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { browserHistory } from "react-router";
 import FlatList from "flatlist-react";
 import moment from "moment";
 import ReactLoading from "react-loading";
@@ -41,7 +40,7 @@ export default class App extends Component {
   }
 
   whichList(listType) {
-    if (listType == "new" && !this.state.newSelected) {
+    if (listType === "new" && !this.state.newSelected) {
       this.setState(
         {
           newSelected: true,
@@ -52,7 +51,7 @@ export default class App extends Component {
         },
         () => this.getNewStoriesIdList()
       );
-    } else if (listType == "past" && !this.state.pastSelected) {
+    } else if (listType === "past" && !this.state.pastSelected) {
       this.setState(
         {
           newSelected: false,
@@ -63,7 +62,7 @@ export default class App extends Component {
         },
         () => this.getNewStoriesIdList()
       );
-    } else if (listType == "top" && !this.state.topSelected) {
+    } else if (listType === "top" && !this.state.topSelected) {
       this.setState(
         {
           newSelected: false,
@@ -138,28 +137,28 @@ export default class App extends Component {
         <div
           class="List-box"
           onClick={() =>
-            item.url == ""
+            item.url === "" || item.url == null
               ? alert("No URL available.")
               : window.open(item.url, "_blank")
           }
         >
           <text class="List-title">
-            {item.title == "" || item.title == null
+            {item.title === "" || item.title == null
               ? "No title available"
               : item.title}
           </text>
           <text class="List-description">
-            {item.text == "" || item.text == null
+            {item.text === "" || item.text == null
               ? "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, …when an unknown printer took a galley of type and scrambled"
               : this.getDescription(item.text)}
           </text>
           <img src={clock} className="List-clock" alt="clock" />
           <text className="List-time">
-            {item.time == "" || item.time == null
+            {item.time === "" || item.time == null
               ? "No time available"
               : this.getTime(item.time)}{" "}
             |{" "}
-            {item.descendants == "" || item.descendants == null
+            {item.descendants === "" || item.descendants == null
               ? "No comments available"
               : item.descendants + " comments"}
           </text>
@@ -246,16 +245,7 @@ export default class App extends Component {
                   />
                 )
               ) : null}
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
+              <div style={{ bottom: 0, width: "100%", height: 200 }} />
             </div>
           ) : (
             <ReactLoading

@@ -1,248 +1,243 @@
 @font-face {
-  font-family: "OpenSansRegular";
-  src: local("OpenSansRegular"), url("../assets/Open_Sans/OpenSans-Regular.ttf") format("truetype");
-  font-weight: normal;
+	font-family: "OpenSansRegular";
+	src: local("OpenSansRegular"), url("../assets/Open_Sans/OpenSans-Regular.ttf") format("truetype");
+	font-weight: normal;
 }
 
 @font-face {
-  font-family: "OpenSansExtraBold";
-  src: local("OpenSansExtraBold"), url("../assets/Open_Sans/OpenSans-ExtraBold.ttf") format("truetype");
-  font-weight: bold;
+	font-family: "OpenSansExtraBold";
+	src: local("OpenSansExtraBold"), url("../assets/Open_Sans/OpenSans-ExtraBold.ttf") format("truetype");
+	font-weight: bold;
 }
 
  ::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
 .Main-div {
-  overflow-y: hidden;
-  overflow-x: hidden;
-  -ms-overflow-style: none;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	-ms-overflow-style: none;
 }
 
 .Home-header {
-  background-color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  width: 100%;
+	background-color: #FFFFFF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+	width: 100%;
 }
 
 .Title-header {
-  position: absolute;
-  width: 100%;
-  height: 51px;
-  left: 0px;
-  top: 0px;
-  text-align: center;
-  background: #FFFFFF;
-  box-shadow: 0px 3px 28px rgba(0, 0, 0, 0.08)
+	position: absolute;
+	width: 100%;
+	height: 51px;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+	background: #FFFFFF;
+	box-shadow: 0px 3px 28px rgba(0, 0, 0, 0.08)
 }
 
 .Title-style {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 .Title-text1 {
-  color: #FBC91B;
-  font-family: OpenSansExtraBold;
-  font-style: normal;
-  font-weight: bold;
-  font-size: xx-large;
+	color: #FBC91B;
+	font-family: OpenSansExtraBold;
+	font-style: normal;
+	font-weight: bold;
+	font-size: xx-large;
 }
 
 .Title-text2 {
-  color: #000000;
-  font-family: OpenSansExtraBold;
-  font-style: normal;
-  font-weight: bold;
-  font-size: xx-large;
+	color: #000000;
+	font-family: OpenSansExtraBold;
+	font-style: normal;
+	font-weight: bold;
+	font-size: xx-large;
 }
 
 .Top-buttons {
-  padding: 4px 12px;
-  position: absolute;
-  width: 61px;
-  height: 24px;
-  top: 67px;
-  border-radius: 180px;
-  z-index: 1;
-  background-color: #FFFFFF;
+	padding: 4px 12px;
+	position: absolute;
+	width: 61px;
+	height: 24px;
+	top: 67px;
+	border-radius: 180px;
+	z-index: 1;
+	background-color: #FFFFFF;
 }
 
 .Top-buttons-text {
-  position: absolute;
-  left: 19.67%;
-  right: 19.67%;
-  top: 25%;
-  font-family: OpenSansExtraBold;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 100%;
-  /* identical to box height, or 16px */
-  color: rgba(0, 0, 0, 0.82);
-  /* Inside Auto Layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 0px 10px;
+	position: absolute;
+	left: 19.67%;
+	right: 19.67%;
+	top: 25%;
+	font-family: OpenSansExtraBold;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 100%;
+	/* identical to box height, or 16px */
+	color: rgba(0, 0, 0, 0.82);
+	/* Inside Auto Layout */
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	margin: 0px 10px;
 }
 
 .List-outer-div {
-  position: absolute;
-  width: 90%;
-  height: 90%;
-  top: 62%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+	position: absolute;
+	width: 90%;
+	height: 90%;
+	top: 62%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 .List-box {
-  margin-top: 15px;
-  height: 150px;
-  background: #FFFFFF;
-  box-shadow: 0px 3px 28px rgba(0, 0, 0, 0.08);
-  border-radius: 12px;
+	margin-top: 15px;
+	height: 150px;
+	background: #FFFFFF;
+	box-shadow: 0px 3px 28px rgba(0, 0, 0, 0.08);
+	border-radius: 12px;
 }
 
 .List-title {
-  position: absolute;
-  margin-top: 20px;
-  left: 20px;
-    font-family: OpenSansExtraBold;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;  
-    overflow: hidden;
-  
-    color: rgba(0, 0, 0, 0.82);
-  }
+	position: absolute;
+	margin-top: 20px;
+	left: 20px;
+	font-family: OpenSansExtraBold;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 15px;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	color: rgba(0, 0, 0, 0.82);
+}
 
-  .List-description {
-    position: absolute;
-    margin-top: 45px;
-    left: 20px;
-    font-family: OpenSansRegular;
-    font-weight: normal;
-    font-size: 13px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;  
-    overflow: hidden;
-    
-    color: rgba(0, 0, 0, 0.82);
-  }
+.List-description {
+	position: absolute;
+	margin-top: 45px;
+	left: 20px;
+	font-family: OpenSansRegular;
+	font-weight: normal;
+	font-size: 13px;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	color: rgba(0, 0, 0, 0.82);
+}
 
-  .List-clock {
-    position: absolute;
-    height: 20px;
-    pointer-events: none;
-    margin-top: 120px;
-    left: 20px;
-  }
+.List-clock {
+	position: absolute;
+	height: 20px;
+	pointer-events: none;
+	margin-top: 120px;
+	left: 20px;
+}
 
-  .List-time {
-    position: absolute;
-    margin-top: 123px;
-    left: 43px;
-    font-family: OpenSansRegular;
-    font-weight: normal;
-    font-size: 13px;
-  
-    
-    color: rgba(0, 0, 0, 0.5);
-  }
+.List-time {
+	position: absolute;
+	margin-top: 123px;
+	left: 43px;
+	font-family: OpenSansRegular;
+	font-weight: normal;
+	font-size: 13px;
+	color: rgba(0, 0, 0, 0.5);
+}
 
 .Load-box {
-  position: absolute;
-  width: 328px;
-  height: 48px;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  background: #FFC700;
-  border-radius: 12px;
-  border-width: 0;
+	position: absolute;
+	width: 328px;
+	height: 48px;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	background: #FFC700;
+	border-radius: 12px;
+	border-width: 0;
 }
 
 .Load-text {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-family: OpenSansExtraBold;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  color: #000000;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-family: OpenSansExtraBold;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: #000000;
 }
 
 .Bottom-title {
-  position: absolute;
-  width: 100%;
-  height: 99px;
-  left: 0px;
-  bottom: 0px;
-  background: #FBC91B;
+	position: absolute;
+	width: 100%;
+	height: 99px;
+	left: 0px;
+	bottom: 0px;
+	background: #FBC91B;
 }
 
 .Bottom-title-text {
-  position: absolute;
-  bottom: 3%;
-  color: #000000;
-  font-family: OpenSansExtraBold;
-  font-style: normal;
-  font-weight: bold;
-  font-size:xx-large;
+	position: absolute;
+	bottom: 3%;
+	color: #000000;
+	font-family: OpenSansExtraBold;
+	font-style: normal;
+	font-weight: bold;
+	font-size: xx-large;
 }
 
 .noList-box {
-  position: absolute;
-  top:30%;
-  width: 100%;
+	position: absolute;
+	top: 30%;
+	width: 100%;
 }
+
 .noList-text {
-  position: absolute;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-    font-family: OpenSansExtraBold;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
-    color: rgba(0, 0, 0, 0.82);
-
+	position: absolute;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-family: OpenSansExtraBold;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 15px;
+	color: rgba(0, 0, 0, 0.82);
 }
 
-.Loading-spin  {
-  position: absolute;
-  top:50%;
-  width: 100%;
-
+.Loading-spin {
+	position: absolute;
+	top: 50%;
+	width: 100%;
 }
 
 .NextLoading-spin {
-  position: absolute;
-  width: 328px;
-  height: 48px;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-radius: 12px;
-  border-width: 0;
+	position: absolute;
+	width: 328px;
+	height: 48px;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	border-radius: 12px;
+	border-width: 0;
 }
