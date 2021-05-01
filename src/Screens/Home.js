@@ -13,6 +13,7 @@ export default class App extends Component {
   state = {
     isLoading : false,
     newSelected: true,
+    nextIndex : 0,
     noData: false,
     topStoriesIdList: [],
     stories: [],
@@ -50,7 +51,7 @@ export default class App extends Component {
   }
 
   async getTopThreeStories() {
-    for (var i = 0; i < 3; i++) {
+    for (var i = this.state.nextIndex; i < this.state.nextIndex + 3; i++) {
       await fetch(
         api.baseUrl + "item/" + this.state.topStoriesIdList[i] + ".json"
       )
@@ -62,16 +63,7 @@ export default class App extends Component {
           console.log(error);
         });
     }
-    this.setState({ noData: false, isLoading : false });
-  }
-
-  async getMoreListData() {
-    var newData = [
-      { title: "Elson", description: "Correia", time: "", comments: 50 },
-      { title: "Elson", description: "Correia", time: 2, comments: "" },
-      { title: "Elson", description: "", time: 2, comments: 50 },
-    ];
-    this.setState({ people: this.state.people.concat(newData) });
+    this.setState({ noData: false, isLoading : false, nextIndex : i });
   }
 
   getTime(time) {
@@ -159,7 +151,7 @@ export default class App extends Component {
             <br></br>
             <br></br>
             {!this.state.noData ? (
-              <button class="Load-box" onClick={() => this.getMoreListData()}>
+              <button class="Load-box" onClick={() => this.getTopThreeStories()}>
                 <text class="Load-text">Load More</text>
               </button>
             ) : null}
