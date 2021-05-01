@@ -8,9 +8,11 @@ import clock from "../assets/clock.svg";
 export default class App extends Component {
   state = {
     newSelected: true,
-    noData : false,
+    noData: false,
     people: [
-     
+      { title: "Elson", description: "Correia", time: "", comments: 50 },
+      { title: "Elson", description: "Correia", time: 2, comments: "" },
+      { title: "Elson", description: "", time: 2, comments: 50 },
     ],
   };
   disableScrolling() {
@@ -27,9 +29,9 @@ export default class App extends Component {
 
   async getListData() {
     var newData = [
-        { title: "Elson", description: "Correia", time : "",comments : 50},
-        { title: "Elson", description: "Correia", time : 2,comments : ""},
-        { title: "Elson", description: "", time : 2,comments : 50},
+      { title: "Elson", description: "Correia", time: "", comments: 50 },
+      { title: "Elson", description: "Correia", time: 2, comments: "" },
+      { title: "Elson", description: "", time: 2, comments: 50 },
     ];
     this.setState({ people: this.state.people.concat(newData) });
   }
@@ -38,27 +40,34 @@ export default class App extends Component {
     return (
       <li>
         <div class="List-box">
-          <text class="List-title">{item.title == "" ? "No title available" : item.title}</text>
+          <text class="List-title">
+            {item.title == "" ? "No title available" : item.title}
+          </text>
           <text class="List-description">
-           {item.description == "" ? "No description available" : item.description}
+            {item.description == ""
+              ? "No description available"
+              : item.description}
           </text>
           <img src={clock} className="List-clock" alt="clock" />
-          <text className="List-time">{item.time == "" ? "No time available" : item.time+" min ago"} | {item.comments == "" ? "No comments available" : item.comments+" comments"}</text>
+          <text className="List-time">
+            {item.time == "" ? "No time available" : item.time + " min ago"} |{" "}
+            {item.comments == ""
+              ? "No comments available"
+              : item.comments + " comments"}
+          </text>
         </div>
       </li>
     );
   };
 
-
   renderEmptyList = () => {
-    this.setState({noData : true})
+    this.setState({ noData: true });
     return (
-        <div class="noList-box">
-             <text class="noList-text">No Data Available!</text>
-        </div>
+      <div class="noList-box">
+        <text class="noList-text">No Data Available!</text>
+      </div>
     );
   };
-
 
   render() {
     return (
@@ -100,10 +109,11 @@ export default class App extends Component {
 
             <br></br>
             <br></br>
-            {!this.state.noData ?
-            <button class="Load-box" onClick={() => this.getListData()}>
-              <text class="Load-text">Load More</text>
-            </button> : null}
+            {!this.state.noData ? (
+              <button class="Load-box" onClick={() => this.getListData()}>
+                <text class="Load-text">Load More</text>
+              </button>
+            ) : null}
             <br></br>
             <br></br>
             <br></br>
