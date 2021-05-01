@@ -49,7 +49,9 @@ export default class App extends Component {
 
   async getTopThreeStories() {
     for (var i = 0; i < 3; i++) {
-    await  fetch(api.baseUrl + "item/" + this.state.topStoriesIdList[i] + ".json")
+      await fetch(
+        api.baseUrl + "item/" + this.state.topStoriesIdList[i] + ".json"
+      )
         .then((response) => response.json())
         .then((data) => {
           this.setState({ stories: this.state.stories.concat(data) });
@@ -70,11 +72,10 @@ export default class App extends Component {
     this.setState({ people: this.state.people.concat(newData) });
   }
 
-  getTime(time){
-var date = new Date(time * 1000);
+  getTime(time) {
+    var date = new Date(time * 1000);
 
-
-    return moment("20111031", "YYYYMMDD").fromNow();
+    return moment(date).fromNow();
   }
 
   renderList = (item, idx) => {
@@ -85,13 +86,11 @@ var date = new Date(time * 1000);
             {item.title == "" ? "No title available" : item.title}
           </text>
           <text class="List-description">
-            {item.text == ""
-              ? "No description available"
-              : item.text}
+            {item.text == "" ? "No description available" : item.text}
           </text>
           <img src={clock} className="List-clock" alt="clock" />
           <text className="List-time">
-            {item.time == "" ? "No time available" :this.getTime(item.time) + " min ago"} |{" "}
+            {item.time == "" ? "No time available" : this.getTime(item.time)} |{" "}
             {item.descendants == ""
               ? "No comments available"
               : item.descendants + " comments"}
@@ -143,7 +142,7 @@ var date = new Date(time * 1000);
           </div>
           <div class="List-outer-div" style={{ overflowY: "scroll" }}>
             <FlatList
-              list={ this.state.stories}
+              list={this.state.stories}
               renderItem={this.renderList}
               renderWhenEmpty={this.renderEmptyList}
             />
