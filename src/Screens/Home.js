@@ -5,6 +5,8 @@ import FlatList from "flatlist-react";
 import "../CSS/Home.css";
 import clock from "../assets/clock.svg";
 
+const api = require("../Configurations/api");
+
 export default class App extends Component {
   state = {
     newSelected: true,
@@ -24,10 +26,20 @@ export default class App extends Component {
   }
 
   async componentDidMount() {
+    this.getNewStoriesIdList();
     this.disableScrolling();
   }
 
-  async getListData() {
+  async getNewStoriesIdList() {
+    fetch(api.baseUrl + "newstories.json")
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  async getMoreListData() {
     var newData = [
       { title: "Elson", description: "Correia", time: "", comments: 50 },
       { title: "Elson", description: "Correia", time: 2, comments: "" },
@@ -110,7 +122,7 @@ export default class App extends Component {
             <br></br>
             <br></br>
             {!this.state.noData ? (
-              <button class="Load-box" onClick={() => this.getListData()}>
+              <button class="Load-box" onClick={() => this.getMoreListData()}>
                 <text class="Load-text">Load More</text>
               </button>
             ) : null}
