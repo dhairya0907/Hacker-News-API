@@ -1,133 +1,156 @@
+@font-face {
+	font-family: "OpenSansRegular";
+	src: local("OpenSansRegular"), url("../assets/Open_Sans/OpenSans-Regular.ttf") format("truetype");
+	font-weight: normal;
+}
 
-  @font-face {
-    font-family: "OpenSansRegular";
-    src: local("OpenSansRegular"),
-      url("../assets/Open_Sans/OpenSans-Regular.ttf") format("truetype");
-    font-weight: normal;
-  }
-  @font-face {
-    font-family: "OpenSansBold";
-    src: local("OpenSansBold"),
-      url("../assets/Open_Sans/OpenSans-Bold.ttf") format("truetype");
-    font-weight: bold;
-  }
-  
-  .Home-header {
-    background-color:#FFFFFF;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-    width: 100%;
-  }
+@font-face {
+	font-family: "OpenSansExtraBold";
+	src: local("OpenSansExtraBold"), url("../assets/Open_Sans/OpenSans-ExtraBold.ttf") format("truetype");
+	font-weight: bold;
+}
 
-  .Title-header {
-    position: absolute;
-    width: 100%;
-    height: 51px;
-    left: 0px;
-    top: 0px;
-    text-align: center;
-    background: #FFFFFF;
-    box-shadow: 0px 3px 28px rgba(0, 0, 0, 0.08)
-  }
+.Main-div {
 
-  .Title-style {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-  
-  .Title-text1 {
-    color: #FBC91B;
-    font-family:OpenSansBold;
-    font-style: normal;
-    font-weight: bold;
-    font-size:xx-large;
-  }
+}
 
-  .Title-text2 {
-    color: #000000;
-    font-family:OpenSansBold;
-    font-style: normal;
-    font-weight: bold;
-    font-size:xx-large;
-  }
+.Home-header {
+	background-color: #FFFFFF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+	width: 100%;
+}
 
-  .Top-buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 4px 12px;
+.Title-header {
+	position: absolute;
+	width: 100%;
+	height: 51px;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+	background: #FFFFFF;
+	box-shadow: 0px 3px 28px rgba(0, 0, 0, 0.08)
+}
 
-    position: absolute;
-    width: 61px;
-    height: 24px;
-    top: 67px;
+.Title-style {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
 
-    border-radius: 180px;
-  }
+.Title-text1 {
+	color: #FBC91B;
+	font-family: OpenSansExtraBold;
+	font-style: normal;
+	font-weight: bold;
+	font-size: xx-large;
+}
 
-  .Top-buttons-text {
-    position: absolute;
-    left: 19.67%;
-    right: 19.67%;
-    top: 25%;
+.Title-text2 {
+	color: #000000;
+	font-family: OpenSansExtraBold;
+	font-style: normal;
+	font-weight: bold;
+	font-size: xx-large;
+}
 
-    font-family: OpenSansBold;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 100%;
-    /* identical to box height, or 16px */
+.Top-buttons {
+	padding: 4px 12px;
+	position: absolute;
+	width: 61px;
+	height: 24px;
+	top: 67px;
+	border-radius: 180px;
+  z-index: 1;
+  background-color: #FFFFFF;
+}
 
+.Top-buttons-text {
+	position: absolute;
+	left: 19.67%;
+	right: 19.67%;
+	top: 25%;
+	font-family: OpenSansExtraBold;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 100%;
+	/* identical to box height, or 16px */
+	color: rgba(0, 0, 0, 0.82);
+	/* Inside Auto Layout */
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	margin: 0px 10px;
+}
 
-    color: rgba(0, 0, 0, 0.82);
+.List-outer-div {
+	position: absolute;
+	width: 90%;
+	height: 90%;
+	top: 62%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
 
+.List-box {
+	margin-top: 15px;
+	height: 150px;
+	background: #FFFFFF;
+	box-shadow: 0px 3px 28px rgba(0, 0, 0, 0.08);
+	border-radius: 12px;
+}
 
-    /* Inside Auto Layout */
+.Load-box {
+	position: absolute;
+	width: 328px;
+	height: 48px;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	background: #FFC700;
+	border-radius: 12px;
+	border-width: 0;
+}
 
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0px 10px;
-  }
+.Load-text {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-family: OpenSansExtraBold;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 22px;
+	color: #000000;
+}
 
-  .Load-box {
-    position: absolute;
-    width: 328px;
-    height: 48px;
-    left: 25%;
-    bottom: 20px;
-    position: absolute;
-   
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    background: #FFC700;
-    border-radius: 12px;
-    border-width: 0;
-  }
+.Bottom-title {
+	position: absolute;
+	width: 100%;
+	height: 99px;
+	left: 0px;
+	bottom: 0px;
+	background: #FBC91B;
+}
 
-  .Load-text {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-family: OpenSansBold;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 22px;
-    color: #000000;
-  }
-
-  
+.Bottom-title-text {
+	position: absolute;
+	bottom: 3%;
+	color: #000000;
+	font-family: OpenSansExtraBold;
+	font-style: normal;
+	font-weight: bold;
+	font-size:xx-large;
+}
