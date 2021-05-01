@@ -48,6 +48,7 @@ export default class App extends Component {
           topSelected: false,
           isLoading: true,
           stories: [],
+          nextIndex: 0,
         },
         () => this.getNewStoriesIdList()
       );
@@ -59,6 +60,7 @@ export default class App extends Component {
           topSelected: false,
           isLoading: true,
           stories: [],
+          nextIndex: 0,
         },
         () => this.getNewStoriesIdList()
       );
@@ -70,6 +72,7 @@ export default class App extends Component {
           topSelected: true,
           isLoading: true,
           stories: [],
+          nextIndex: 0,
         },
         () => this.getNewStoriesIdList()
       );
@@ -100,25 +103,35 @@ export default class App extends Component {
   }
 
   async getTopThreeStories() {
-    this.setState({ isNextLoading: true });
-    for (var i = this.state.nextIndex; i < this.state.nextIndex + 3; i++) {
-      await fetch(
-        api.baseUrl + "item/" + this.state.newStoriesIdList[i] + ".json"
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          this.setState({ stories: this.state.stories.concat(data) });
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    if (this.state.nextIndex <= 497) {
+      this.setState({ isNextLoading: true });
+      for (var i = this.state.nextIndex; i < this.state.nextIndex + 3; i++) {
+        await fetch(
+          api.baseUrl + "item/" + this.state.newStoriesIdList[i] + ".json"
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            this.setState({ stories: this.state.stories.concat(data) });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+      this.setState({
+        noData: false,
+        isLoading: false,
+        nextIndex: i,
+        isNextLoading: false,
+      });
+    } else {
+      alert("N0 more data to display.");
+      this.setState({
+        noData: false,
+        isLoading: false,
+        nextIndex: i,
+        isNextLoading: false,
+      });
     }
-    this.setState({
-      noData: false,
-      isLoading: false,
-      nextIndex: i,
-      isNextLoading: false,
-    });
   }
 
   getTime(time) {
