@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { browserHistory } from "react-router";
 import FlatList from "flatlist-react";
 import moment from "moment";
-import ReactLoading from 'react-loading';
+import ReactLoading from "react-loading";
 
 import "../CSS/Home.css";
 import clock from "../assets/clock.svg";
@@ -11,9 +11,10 @@ const api = require("../Configurations/api");
 
 export default class App extends Component {
   state = {
-    isLoading : false,
+    isLoading: false,
+    isNextLoading: false,
     newSelected: true,
-    nextIndex : 0,
+    nextIndex: 0,
     noData: false,
     topStoriesIdList: [],
     stories: [],
@@ -32,7 +33,7 @@ export default class App extends Component {
   }
 
   async componentDidMount() {
-    this.setState({isLoading : true})
+    this.setState({ isLoading: true });
     this.disableScrolling();
     this.getTopStoriesIdList();
   }
@@ -51,6 +52,7 @@ export default class App extends Component {
   }
 
   async getTopThreeStories() {
+    this.setState({ isNextLoading: true });
     for (var i = this.state.nextIndex; i < this.state.nextIndex + 3; i++) {
       await fetch(
         api.baseUrl + "item/" + this.state.topStoriesIdList[i] + ".json"
@@ -63,7 +65,12 @@ export default class App extends Component {
           console.log(error);
         });
     }
-    this.setState({ noData: false, isLoading : false, nextIndex : i });
+    this.setState({
+      noData: false,
+      isLoading: false,
+      nextIndex: i,
+      isNextLoading: false,
+    });
   }
 
   getTime(time) {
@@ -140,33 +147,54 @@ export default class App extends Component {
           >
             <text class="Top-buttons-text">Past</text>
           </div>
-          {!this.state.isLoading ?
-          <div class="List-outer-div" style={{ overflowY: "scroll" }}>
-            <FlatList
-              list={this.state.stories}
-              renderItem={this.renderList}
-              renderWhenEmpty={this.renderEmptyList}
-            />
+          {!this.state.isLoading ? (
+            <div class="List-outer-div" style={{ overflowY: "scroll" }}>
+              <FlatList
+                list={this.state.stories}
+                renderItem={this.renderList}
+                renderWhenEmpty={this.renderEmptyList}
+              />
 
-            <br></br>
-            <br></br>
-            {!this.state.noData ? (
-              <button class="Load-box" onClick={() => this.getTopThreeStories()}>
-                <text class="Load-text">Load More</text>
-              </button>
-            ) : null}
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-          </div> :
-          <ReactLoading type={"spin"} color={"black"} height={100} width={50} class="Loading-spin"/>}
+              <br></br>
+              <br></br>
+              {!this.state.noData ? (
+                !this.state.isNextLoading ? (
+                  <button
+                    class="Load-box"
+                    onClick={() => this.getTopThreeStories()}
+                  >
+                    <text class="Load-text">Load More</text>
+                  </button>
+                ) : (
+                  <ReactLoading
+                    type={"spin"}
+                    color={"black"}
+                    height={50}
+                    width={25}
+                    class="NextLoading-spin"
+                  />
+                )
+              ) : null}
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+            </div>
+          ) : (
+            <ReactLoading
+              type={"spin"}
+              color={"black"}
+              height={50}
+              width={25}
+              class="Loading-spin"
+            />
+          )}
           <div class="Bottom-title"></div>
           <text class="Bottom-title-text">HACKERNEWS.</text>
         </header>

@@ -235,3 +235,14 @@
   width: 100%;
 
 }
+
+.NextLoading-spin {
+  position: absolute;
+  width: 328px;
+  height: 48px;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  border-width: 0;
+}
