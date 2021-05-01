@@ -9,9 +9,9 @@ export default class App extends Component {
   state = {
     newSelected: true,
     people: [
-      { firstName: "Elson", lastName: "Correia", info: { age: 24 } },
-      { firstName: "John", lastName: "Doe", info: { age: 18 } },
-      { firstName: "Elson", lastName: "Correia", info: { age: 24 } },
+      { title: "Elson", description: "Correia", time : 2,comments : 50},
+      { title: "Elson", description: "Correia", time : 2,comments : 50},
+      { title: "Elson", description: "Correia", time : 2,comments : 50},
     ],
   };
   disableScrolling() {
@@ -28,27 +28,23 @@ export default class App extends Component {
 
   async getListData() {
     var newData = [
-      { firstName: "John", lastName: "Doe", info: { age: 18 } },
-      { firstName: "Elson", lastName: "Correia", info: { age: 24 } },
-      { firstName: "John", lastName: "Doe", info: { age: 18 } },
-      { firstName: "Elson", lastName: "Correia", info: { age: 24 } },
-      { firstName: "John", lastName: "Doe", info: { age: 18 } },
+        { title: "Elson", description: "Correia", time : "",comments : 50},
+        { title: "Elson", description: "Correia", time : 2,comments : ""},
+        { title: "Elson", description: "", time : 2,comments : 50},
     ];
     this.setState({ people: this.state.people.concat(newData) });
   }
 
-  renderList = (person, idx) => {
+  renderList = (item, idx) => {
     return (
       <li>
         <div class="List-box">
-          <text class="List-title">Lorem Ipsum is simply dummy text.</text>
+          <text class="List-title">{item.title == "" ? "No title available" : item.title}</text>
           <text class="List-description">
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s, …when an unknown printer took a galley of type and
-            scrambled
+           {item.description == "" ? "No description available" : item.description}
           </text>
           <img src={clock} className="List-clock" alt="clock" />
-          <text className="List-time">1 min ago | 50 comments</text>
+          <text className="List-time">{item.time == "" ? "No time available" : item.time+" min ago"} | {item.comments == "" ? "No comments available" : item.comments+" comments"}</text>
         </div>
       </li>
     );
