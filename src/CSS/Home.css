@@ -205,3 +205,22 @@
   font-weight: bold;
   font-size:xx-large;
 }
+
+.noList-box {
+  position: absolute;
+  top:30%;
+  width: 100%;
+}
+.noList-text {
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+    font-family: OpenSansExtraBold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.82);
+
+}

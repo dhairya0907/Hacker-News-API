@@ -8,10 +8,9 @@ import clock from "../assets/clock.svg";
 export default class App extends Component {
   state = {
     newSelected: true,
+    noData : false,
     people: [
-      { title: "Elson", description: "Correia", time : 2,comments : 50},
-      { title: "Elson", description: "Correia", time : 2,comments : 50},
-      { title: "Elson", description: "Correia", time : 2,comments : 50},
+     
     ],
   };
   disableScrolling() {
@@ -50,6 +49,17 @@ export default class App extends Component {
     );
   };
 
+
+  renderEmptyList = () => {
+    this.setState({noData : true})
+    return (
+        <div class="noList-box">
+             <text class="noList-text">No Data Available!</text>
+        </div>
+    );
+  };
+
+
   render() {
     return (
       <div class="Main-div">
@@ -85,14 +95,15 @@ export default class App extends Component {
             <FlatList
               list={this.state.people}
               renderItem={this.renderList}
-              renderWhenEmpty={() => <div>List is empty!</div>}
+              renderWhenEmpty={this.renderEmptyList}
             />
 
             <br></br>
             <br></br>
+            {!this.state.noData ?
             <button class="Load-box" onClick={() => this.getListData()}>
               <text class="Load-text">Load More</text>
-            </button>
+            </button> : null}
             <br></br>
             <br></br>
             <br></br>
