@@ -16,7 +16,7 @@ export default class App extends Component {
     newSelected: true,
     nextIndex: 0,
     noData: false,
-    topStoriesIdList: [],
+    newStoriesIdList: [],
     stories: [],
     people: [
       { title: "Elson", description: "Correia", time: "", comments: 50 },
@@ -35,14 +35,38 @@ export default class App extends Component {
   async componentDidMount() {
     this.setState({ isLoading: true });
     this.disableScrolling();
-    this.getTopStoriesIdList();
+    this.getNewStoriesIdList();
   }
 
-  async getTopStoriesIdList() {
-    fetch(api.baseUrl + "topstories.json")
+  whichList() {
+    if (!this.state.newSelected) {
+      this.setState(
+        {
+          newSelected: true,
+          newStoriesIdList: this.state.newStoriesIdList.reverse(),
+          isLoading: true,
+          stories : [],
+        },
+        () => this.getTopThreeStories()
+      );
+    } else {
+      this.setState(
+        {
+          newSelected: false,
+          newStoriesIdList: this.state.newStoriesIdList.reverse(),
+          isLoading: true,
+          stories : [],
+        },
+        () => this.getTopThreeStories()
+      );
+    }
+  }
+
+  async getNewStoriesIdList() {
+    fetch(api.baseUrl + "newstories.json")
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ topStoriesIdList: data }, () =>
+        this.setState({ newStoriesIdList: data }, () =>
           this.getTopThreeStories()
         );
       })
@@ -55,7 +79,7 @@ export default class App extends Component {
     this.setState({ isNextLoading: true });
     for (var i = this.state.nextIndex; i < this.state.nextIndex + 3; i++) {
       await fetch(
-        api.baseUrl + "item/" + this.state.topStoriesIdList[i] + ".json"
+        api.baseUrl + "item/" + this.state.newStoriesIdList[i] + ".json"
       )
         .then((response) => response.json())
         .then((data) => {
@@ -133,7 +157,7 @@ export default class App extends Component {
               backgroundColor: this.state.newSelected ? "#FBC91B" : "#F2F2F2",
               left: 16,
             }}
-            onClick={() => this.setState({ newSelected: true })}
+            onClick={() => this.whichList("new")}
           >
             <text class="Top-buttons-text">New</text>
           </div>
@@ -143,7 +167,7 @@ export default class App extends Component {
               backgroundColor: !this.state.newSelected ? "#FBC91B" : "#F2F2F2",
               left: 110,
             }}
-            onClick={() => this.setState({ newSelected: false })}
+            onClick={() => this.whichList("past")}
           >
             <text class="Top-buttons-text">Past</text>
           </div>
