@@ -11,6 +11,7 @@ export default class App extends Component {
   state = {
     newSelected: true,
     noData: false,
+    topStoriesIdList : [],
     people: [
       { title: "Elson", description: "Correia", time: "", comments: 50 },
       { title: "Elson", description: "Correia", time: 2, comments: "" },
@@ -31,9 +32,12 @@ export default class App extends Component {
   }
 
   async getNewStoriesIdList() {
-    fetch(api.baseUrl + "newstories.json")
+    fetch(api.baseUrl + "topstories.json")
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+          this.setState({topStoriesIdList : data})
+          console.log(this.state.topStoriesIdList)
+      })
       .catch((error) => {
         console.log(error);
       });
