@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { browserHistory } from "react-router";
 import FlatList from "flatlist-react";
+import moment from "moment";
 
 import "../CSS/Home.css";
 import clock from "../assets/clock.svg";
@@ -70,8 +71,10 @@ export default class App extends Component {
   }
 
   getTime(time){
-    var date = new Date(time * 1000);
-    var hours = date.getHours();
+var date = new Date(time * 1000);
+
+
+    return moment("20111031", "YYYYMMDD").fromNow();
   }
 
   renderList = (item, idx) => {
@@ -82,9 +85,9 @@ export default class App extends Component {
             {item.title == "" ? "No title available" : item.title}
           </text>
           <text class="List-description">
-            {item.description == ""
+            {item.text == ""
               ? "No description available"
-              : item.description}
+              : item.text}
           </text>
           <img src={clock} className="List-clock" alt="clock" />
           <text className="List-time">
