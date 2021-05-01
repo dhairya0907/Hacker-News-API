@@ -4,32 +4,36 @@ import FlatList from "flatlist-react";
 
 import "../CSS/Home.css";
 
-const people = [
-  { firstName: "Elson", lastName: "Correia", info: { age: 24 } },
-  { firstName: "John", lastName: "Doe", info: { age: 18 } },
-  { firstName: "Elson", lastName: "Correia", info: { age: 24 } },
-  { firstName: "John", lastName: "Doe", info: { age: 18 } },
-  { firstName: "Elson", lastName: "Correia", info: { age: 24 } },
-  { firstName: "John", lastName: "Doe", info: { age: 18 } },
-  { firstName: "Elson", lastName: "Correia", info: { age: 24 } },
-  { firstName: "John", lastName: "Doe", info: { age: 18 } },
- 
-];
-
 export default class App extends Component {
   state = {
     newSelected: true,
+    people: [
+      { firstName: "Elson", lastName: "Correia", info: { age: 24 } },
+      { firstName: "John", lastName: "Doe", info: { age: 18 } },
+      { firstName: "Elson", lastName: "Correia", info: { age: 24 } },
+    ],
   };
   disableScrolling() {
     var x = window.scrollX;
     var y = window.scrollY;
     window.onscroll = function () {
-      window.scrollTo(x-10, y-10);
+      window.scrollTo(x - 10, y - 10);
     };
   }
 
   async componentDidMount() {
     this.disableScrolling();
+  }
+
+  async getListData() {
+    var newData = [
+      { firstName: "John", lastName: "Doe", info: { age: 18 } },
+      { firstName: "Elson", lastName: "Correia", info: { age: 24 } },
+      { firstName: "John", lastName: "Doe", info: { age: 18 } },
+      { firstName: "Elson", lastName: "Correia", info: { age: 24 } },
+      { firstName: "John", lastName: "Doe", info: { age: 18 } },
+    ];
+    this.setState({ people: this.state.people.concat(newData) });
   }
 
   renderPerson = (person, idx) => {
@@ -46,7 +50,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div class='Main-div'>
+      <div class="Main-div">
         <header class="Home-header">
           <div class="Title-header">
             <div class="Title-style">
@@ -77,17 +81,14 @@ export default class App extends Component {
           </div>
           <div class="List-outer-div" style={{ overflowY: "scroll" }}>
             <FlatList
-              list={people}
+              list={this.state.people}
               renderItem={this.renderPerson}
               renderWhenEmpty={() => <div>List is empty!</div>}
             />
 
             <br></br>
             <br></br>
-            <button
-              class="Load-box"
-              onClick={() => this.setState({ newSelected: !this.state.newSelected })}
-            >
+            <button class="Load-box" onClick={() => this.getListData()}>
               <text class="Load-text">Load More</text>
             </button>
             <br></br>
@@ -108,4 +109,3 @@ export default class App extends Component {
     );
   }
 }
-
