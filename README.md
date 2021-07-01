@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 
 <p align="center">
-  <a href="https://github.com/dhairya0907/Hacker-News-API">
+  <a href="https://hackernewsapi-demo.vercel.app/">
     <img src="https://drive.google.com/uc?export=download&id=1eoo2L0fmBEWq1IIx25UAsC8AuS2rdEya" alt="Logo" width="80" height="80">
   </a>
 
@@ -132,4 +132,5 @@ Distributed under the MIT License. See [`LICENSE`](https://github.com/dhairya090
 
 Dhairya Sharma - [@dhairya_0907](https://twitter.com/dhairya_0907) - dhairya.sharma532@gmail.com.com
 
-Project Link: [https://github.com/dhairya0907/Hacker-News-API](https://github.com/dhairya0907/Hacker-News-API)
+Project Github Link: [https://github.com/dhairya0907/Hacker-News-API](https://github.com/dhairya0907/Hacker-News-API)
+Project Web Appliction Link: [https://hackernewsapi-demo.vercel.app/](https://hackernewsapi-demo.vercel.app/)
