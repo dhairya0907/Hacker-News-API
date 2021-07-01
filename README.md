@@ -37,7 +37,30 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://hackernewsapi-demo.vercel.app/)
+<p align="center" >
+   <a href="https://hackernewsapi-demo.vercel.app/">
+    <img alt="product mobile screenshot" src="https://drive.google.com/uc?export=download&id=1CwA1FNWdop3shQpT0cCb7E9ySoJk6zUF" />
+ </a>
+<p  align="center">
+  Mobile Version
+  <br/>
+ 
+</p>
+
+</p>
+<p align="center" >
+   <a href="https://hackernewsapi-demo.vercel.app/">
+    <img alt="product desktop screenshot" src="https://drive.google.com/uc?export=download&id=10SQvRpio70p_ruHAdm-rogqsTztvtppk"/>
+    </a>
+
+</p>
+<p  align="center">
+  Desktop Version
+  <br/>
+ <br/>
+</p>
+
+ 
 
 This project is demonstration of how to use API in React project and how to desing simple website using React. I have used Haker News free api fot this demonstration, You can use any other API in same way.
 
@@ -110,7 +133,3 @@ Distributed under the MIT License. See [`LICENSE`](https://github.com/dhairya090
 Dhairya Sharma - [@dhairya_0907](https://twitter.com/dhairya_0907) - dhairya.sharma532@gmail.com.com
 
 Project Link: [https://github.com/dhairya0907/Hacker-News-API](https://github.com/dhairya0907/Hacker-News-API)
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-[product-screenshot]: https://drive.google.com/uc?export=download&id=10SQvRpio70p_ruHAdm-rogqsTztvtppk
