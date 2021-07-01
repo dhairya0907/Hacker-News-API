@@ -54,6 +54,11 @@ Here's why I use Hacker News API and React :
 * [Hacker News API](https://github.com/HackerNews/API)
 * [Deployed using Vercel](https://vercel.com/)
 
+### What I learned
+* How to use API in React.
+* How to desing React web application.
+* How Sturcture React web appliction source code
+
 
 
 <!-- GETTING STARTED -->
