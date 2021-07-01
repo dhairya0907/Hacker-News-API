@@ -8,7 +8,7 @@
   <h3 align="center">Hacker News API</h3>
 
   <p align="center">
-    Api usage and Desing demonstration using Hacker News Api and React.
+    Api usage and Design demonstration using Hacker News Api and React.
     <br />
     <br />
     <a href="https://hackernewsapi-demo.vercel.app/">View Demo</a>
@@ -62,11 +62,11 @@
 
  
 
-This project is demonstration of how to use API in React project and how to desing simple website using React. I have used Haker News free api fot this demonstration, You can use any other API in same way.
+This project is demonstration of how to use API in React project and how to Design simple website using React. I have used Haker News free api fot this demonstration, You can use any other API in same way.
 
 Here's why I use Hacker News API and React :
 * I used Hacker News API because it's free to use and it updates in real time.
-* I used React Library to develop and desing web application beacuse it is easy to learn and easy to use.
+* I used React Library to develop and Design web application beacuse it is easy to learn and easy to use.
 * React has geat developer tools.
 * A virtual DOM is used.
 
@@ -79,7 +79,7 @@ Here's why I use Hacker News API and React :
 
 ### What I learned
 * How to use API in React.
-* How to desing React web application.
+* How to Design React web application.
 * How Sturcture React web appliction source code.
 
 
