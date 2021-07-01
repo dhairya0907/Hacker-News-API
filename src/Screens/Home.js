@@ -162,7 +162,7 @@ export default class App extends Component {
           </text>
           <text class="List-description">
             {item.text === "" || item.text == null
-              ? "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, …when an unknown printer took a galley of type and scrambled"
+              ? "No Description Available"
               : this.getDescription(item.text)}
           </text>
           <img src={clock} className="List-clock" alt="clock" />
