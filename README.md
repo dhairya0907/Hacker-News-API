@@ -57,7 +57,7 @@ Here's why I use Hacker News API and React :
 ### What I learned
 * How to use API in React.
 * How to desing React web application.
-* How Sturcture React web appliction source code
+* How Sturcture React web appliction source code.
 
 
 
