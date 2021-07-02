@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://hackernewsapi-demo.vercel.app/">
-    <img src="https://drive.google.com/uc?export=download&id=1eoo2L0fmBEWq1IIx25UAsC8AuS2rdEya" alt="Logo" width="80" height="80">
+    <img src="/Images/hackernews.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Hacker News API</h3>
@@ -42,7 +42,7 @@
 
 <p align="center" >
    <a href="https://hackernewsapi-demo.vercel.app/">
-    <img alt="product mobile screenshot" src="/Images/hackernews.png" />
+    <img alt="product mobile screenshot" src="/Images/Mobile_Screen_GIf.gif" />
  </a>
 <p  align="center">
   Mobile Version
@@ -53,7 +53,7 @@
 </p>
 <p align="center" >
    <a href="https://hackernewsapi-demo.vercel.app/">
-    <img alt="product desktop screenshot" src="https://drive.google.com/uc?export=download&id=10SQvRpio70p_ruHAdm-rogqsTztvtppk"/>
+    <img alt="product desktop screenshot" src="/Images/Desktop_Screen_GIf.gif"/>
     </a>
 
 </p>
