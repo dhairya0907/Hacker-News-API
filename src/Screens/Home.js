@@ -19,11 +19,6 @@ export default class App extends Component {
     noData: false,
     newStoriesIdList: [],
     stories: [],
-    people: [
-      { title: "Elson", description: "Correia", time: "", comments: 50 },
-      { title: "Elson", description: "Correia", time: 2, comments: "" },
-      { title: "Elson", description: "", time: 2, comments: 50 },
-    ],
   };
   disableScrolling() {
     var x = window.scrollX;
