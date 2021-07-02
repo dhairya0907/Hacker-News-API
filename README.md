@@ -42,7 +42,7 @@
 
 <p align="center" >
    <a href="https://hackernewsapi-demo.vercel.app/">
-    <img alt="product mobile screenshot" src="https://drive.google.com/uc?export=download&id=1CwA1FNWdop3shQpT0cCb7E9ySoJk6zUF" />
+    <img alt="product mobile screenshot" src="/Images/hackernews.png" />
  </a>
 <p  align="center">
   Mobile Version
