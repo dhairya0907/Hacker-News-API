@@ -69,8 +69,8 @@ This project is demonstration of how to use API in React project and how to Desi
 
 Here's why I use Hacker News API and React :
 * I used Hacker News API because it's free to use and it updates in real time.
-* I used React Library to develop and Design web application beacuse it is easy to learn and easy to use.
-* React has geat developer tools.
+* I used React Library to develop and Design web application because it is easy to learn and easy to use.
+* React has great developer tools.
 * A virtual DOM is used.
 
 ### Built With
@@ -81,14 +81,14 @@ Here's why I use Hacker News API and React :
 ### What I learned
 * How to use API in React.
 * How to Design React web application.
-* How Sturcture React web appliction source code.
+* How Structure React web application source code.
 
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To host web applictaion on user localhost follow below steps :
+To host web application on user localhost follow below steps :
 
 ### Prerequisites
 
@@ -135,4 +135,4 @@ Dhairya Sharma - [@dhairya_0907](https://twitter.com/dhairya_0907) - dhairya.sha
 
 Project Github Link: [https://github.com/dhairya0907/Hacker-News-API](https://github.com/dhairya0907/Hacker-News-API)
 
-Project Web Appliction Link: [https://hackernewsapi-demo.vercel.app/](https://hackernewsapi-demo.vercel.app/)
+Project Web Application Link: [https://hackernewsapi-demo.vercel.app/](https://hackernewsapi-demo.vercel.app/)
